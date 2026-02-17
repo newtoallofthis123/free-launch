@@ -4,6 +4,8 @@ Run [Claude Code](https://docs.anthropic.com/en/docs/claude-code) with free mode
 
 `free-launch` fetches the current list of free models from OpenRouter, lets you pick one (with fzf or a numbered list), and launches `claude` with the right environment variables so it talks to OpenRouter instead of the Anthropic API.
 
+![demo](assets/demo.gif)
+
 ## Install
 
 ```
