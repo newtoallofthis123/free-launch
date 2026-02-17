@@ -1,4 +1,4 @@
-package main
+package launcher
 
 import (
 	"fmt"
@@ -6,7 +6,7 @@ import (
 	"os/exec"
 )
 
-func launchClaude(model string) error {
+func LaunchClaude(model string) error {
 	if os.Getenv("OPENROUTER_API_KEY") == "" {
 		return fmt.Errorf("OPENROUTER_API_KEY is not set")
 	}

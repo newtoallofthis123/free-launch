@@ -1,4 +1,4 @@
-package main
+package models
 
 import (
 	"encoding/json"
@@ -24,7 +24,7 @@ func configDir() string {
 	return filepath.Join(base, "free-launch")
 }
 
-func ensureModels() error {
+func EnsureModels() error {
 	dir := configDir()
 	cpPath := filepath.Join(dir, "checkpoint.txt")
 
@@ -91,7 +91,7 @@ func fetchAndCache() error {
 	return os.WriteFile(filepath.Join(dir, "checkpoint.txt"), []byte(ts), 0o644)
 }
 
-func loadModels() ([]Model, error) {
+func LoadModels() ([]Model, error) {
 	data, err := os.ReadFile(filepath.Join(configDir(), "data.json"))
 	if err != nil {
 		return nil, err
@@ -100,7 +100,7 @@ func loadModels() ([]Model, error) {
 	return models, json.Unmarshal(data, &models)
 }
 
-func findModel(query string, models []Model) (Model, error) {
+func FindModel(query string, models []Model) (Model, error) {
 	// Exact match
 	for _, m := range models {
 		if m.ID == query {

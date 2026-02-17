@@ -6,23 +6,23 @@ default:
 
 # Build the binary
 build:
-	go build -o free-launch .
+	go build -o free-launch ./cmd/
 
 # Build with optimizations
 build-release:
-	go build -ldflags="-s -w" -o free-launch .
+	go build -ldflags="-s -w" -o free-launch ./cmd/
 
 # Install the binary
 install:
-	go install .
+	go install ./cmd/
 
 # Run the application directly
 run:
-	go run main.go claude
+	go run ./cmd/ claude
 
 # Run with a specific model
 run-model:
-	go run main.go claude google/gemma-3
+	go run ./cmd/ claude google/gemma-3
 
 # Clean build artifacts
 clean:
@@ -38,7 +38,7 @@ lint:
 
 # Vet the code
 vet:
-	go vet ./...
+	go vet ./cmd/...
 
 # Check and tidy dependencies
 mod:
