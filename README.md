@@ -1,5 +1,7 @@
 # free-launch
 
+[![CI](https://github.com/newtoallofthis123/free-launch/actions/workflows/ci.yml/badge.svg)](https://github.com/newtoallofthis123/free-launch/actions/workflows/ci.yml)
+
 Run [Claude Code](https://docs.anthropic.com/en/docs/claude-code) with free models from [OpenRouter](https://openrouter.ai/).
 
 `free-launch` fetches the current list of free models from OpenRouter, lets you pick one (with fzf or a numbered list), and launches `claude` with the right environment variables so it talks to OpenRouter instead of the Anthropic API.
